@@ -16,6 +16,7 @@
 //= require systemjs/dist/system-polyfills
 //= require systemjs/dist/system.src
 //= require systemjs.config.js
+//= require systemjs_bootstrapper
 //= require rxjs/bundles/Rx.umd
 //= require reflect-metadata/Reflect
 //= require zone.js/dist/zone
