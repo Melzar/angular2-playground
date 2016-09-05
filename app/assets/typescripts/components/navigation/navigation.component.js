@@ -9,16 +9,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var UsersComponent = (function () {
-    function UsersComponent() {
+var router_1 = require('@angular/router');
+var NavigationComponent = (function () {
+    function NavigationComponent(_router) {
+        this._router = _router;
+        this.router = null;
+        this.router = _router;
     }
-    UsersComponent = __decorate([
+    NavigationComponent.prototype.isVisible = function () {
+        return this.router.url != '/login';
+    };
+    NavigationComponent = __decorate([
         core_1.Component({
-            templateUrl: 'app/users/index'
+            selector: 'navigation-component',
+            templateUrl: 'components/navigation/navigation.html'
         }), 
-        __metadata('design:paramtypes', [])
-    ], UsersComponent);
-    return UsersComponent;
+        __metadata('design:paramtypes', [router_1.Router])
+    ], NavigationComponent);
+    return NavigationComponent;
 }());
-exports.UsersComponent = UsersComponent;
-//# sourceMappingURL=users.component.js.map
+exports.NavigationComponent = NavigationComponent;
+//# sourceMappingURL=navigation.component.js.map

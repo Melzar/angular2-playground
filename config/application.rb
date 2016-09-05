@@ -14,8 +14,6 @@ module Angular2Learning
 
     # Explicitly add the 'node_modules' directory
     config.assets.paths << Rails.root.join('node_modules')
-    config.assets.paths << Rails.root
-    config.assets.precompile += %w( *.html )
 
     config.middleware.insert_before 0, 'Rack::Cors' do
       allow do origins '*'

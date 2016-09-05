@@ -20,6 +20,7 @@
 //= require rxjs/bundles/Rx.umd
 //= require reflect-metadata/Reflect
 //= require zone.js/dist/zone
+//= require material-design-lite/material
 //= require @angular/core/bundles/core.umd
 //= require @angular/common/bundles/common.umd
 //= require @angular/compiler/bundles/compiler.umd

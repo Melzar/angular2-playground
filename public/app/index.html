@@ -1,3 +1,8 @@
-<a routerLink="/users">Users</a>
-<a routerLink="/">Index</a>
-<router-outlet></router-outlet>
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <navigation-component></navigation-component>
+    <main class="mdl-layout__content">
+        <div class="page-content">
+            <router-outlet></router-outlet>
+        </div>
+    </main>
+</div>

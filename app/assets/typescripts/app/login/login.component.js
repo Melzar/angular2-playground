@@ -9,16 +9,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var UsersComponent = (function () {
-    function UsersComponent() {
+var LoginComponent = (function () {
+    function LoginComponent() {
     }
-    UsersComponent = __decorate([
+    LoginComponent = __decorate([
         core_1.Component({
-            templateUrl: 'app/users/index'
+            templateUrl: 'app/login/index'
         }), 
         __metadata('design:paramtypes', [])
-    ], UsersComponent);
-    return UsersComponent;
+    ], LoginComponent);
+    return LoginComponent;
 }());
-exports.UsersComponent = UsersComponent;
-//# sourceMappingURL=users.component.js.map
+exports.LoginComponent = LoginComponent;
+//# sourceMappingURL=login.component.js.map
