@@ -1,3 +1,7 @@
+/*
+TODO: Extend this component when there will be stable dynamic component/template feature available
+ */
+
 import { Component, OnInit, Input } from '@angular/core'
 
 import { BaseTableConfig } from "./models/grid_table.config.model";
