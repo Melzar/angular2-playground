@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
 @Component({
-    templateUrl: 'app/login/index'
+    templateUrl: 'app/authentication/login/index'
 })
 export class LoginComponent { }

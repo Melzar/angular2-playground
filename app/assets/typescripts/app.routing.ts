@@ -1,20 +1,29 @@
 import { ModuleWithProviders }  from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { AppComponent }      from './app.component';
-import { UsersComponent }    from './app/users/users.component'
-import { LoginComponent }    from "./app/login/login.component";
+import { LoginComponent }    from "./app/authentication/login.component";
+import { UsersDashboardComponent } from "./app/users/dashboard/dashboard.component";
+import { UsersOffersComponent } from "./app/users/offers/offers.component";
+import { UsersAssociationsComponent } from "./app/users/associations/associations.component";
+
 
 const appRoutes: Routes = [
     {
         path: '',
         redirectTo: '/login',
         pathMatch: 'full'
-
     },
     {
         path: 'users',
-        component: UsersComponent
+        component: UsersDashboardComponent
+    },
+    {
+        path: 'users/offers',
+        component: UsersOffersComponent
+    },
+    {
+        path: 'users/associations',
+        component: UsersAssociationsComponent
     },
     {
         path: 'login',
@@ -22,4 +31,4 @@ const appRoutes: Routes = [
     }
 ];
 
-export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes,{ useHash: true });
+export const AppRouting: ModuleWithProviders = RouterModule.forRoot(appRoutes,{ useHash: true });

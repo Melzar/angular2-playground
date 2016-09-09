@@ -12,23 +12,23 @@ var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var app_routing_1 = require('./app.routing');
 var app_component_1 = require('./app.component');
-var users_component_1 = require('./app/users/users.component');
-var login_component_1 = require('./app/login/login.component');
 var navigation_component_1 = require("./components/navigation/navigation.component");
+var _users_wrapper_module_1 = require("./app/users/_users.wrapper.module");
+var _authentication_wrapper_module_1 = require("./app/authentication/_authentication.wrapper.module");
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
             imports: [
+                app_routing_1.AppRouting,
                 platform_browser_1.BrowserModule,
-                app_routing_1.routing
+                _users_wrapper_module_1.UsersModule,
+                _authentication_wrapper_module_1.AuthenticationModule
             ],
             declarations: [
                 app_component_1.AppComponent,
-                users_component_1.UsersComponent,
-                login_component_1.LoginComponent,
-                /*Utility components*/
+                /*Navigation components*/
                 navigation_component_1.NavigationComponent
             ],
             bootstrap: [app_component_1.AppComponent]

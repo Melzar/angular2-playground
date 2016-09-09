@@ -1,24 +1,24 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { routing } from './app.routing';
+import { AppRouting } from './app.routing';
 
 import { AppComponent }   from './app.component';
-import { UsersComponent }   from './app/users/users.component';
-import { LoginComponent } from './app/login/login.component';
+
 import { NavigationComponent } from "./components/navigation/navigation.component";
+import { UsersModule } from "./app/users/_users.wrapper.module";
+import { AuthenticationModule } from "./app/authentication/_authentication.wrapper.module";
 
 @NgModule({
     imports:      [
+        AppRouting,
         BrowserModule,
-        routing
+        UsersModule,
+        AuthenticationModule
     ],
     declarations: [
         AppComponent,
-        UsersComponent,
-        LoginComponent,
-
-        /*Utility components*/
+        /*Navigation components*/
         NavigationComponent
     ],
     bootstrap:    [ AppComponent ]
