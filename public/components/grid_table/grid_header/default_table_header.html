@@ -1,0 +1,5 @@
+<tr>
+    <th *ngFor="let field of tableConfig.fields">
+        <template [ngTemplateOutlet]="applyFieldHeaderCellTemplate(field)" [ngOutletContext]="objectExpression"></template>
+    </th>
+</tr>

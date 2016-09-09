@@ -24,7 +24,7 @@ var AppModule = (function () {
                 app_routing_1.AppRouting,
                 platform_browser_1.BrowserModule,
                 _users_wrapper_module_1.UsersModule,
-                _authentication_wrapper_module_1.AuthenticationModule
+                _authentication_wrapper_module_1.AuthenticationModule,
             ],
             declarations: [
                 app_component_1.AppComponent,

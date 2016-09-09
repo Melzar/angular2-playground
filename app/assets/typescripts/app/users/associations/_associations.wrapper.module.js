@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var associations_component_1 = require("./associations.component");
 var app_routing_1 = require("../../../app.routing");
+var grid_table_component_1 = require("../../../components/grid_table/grid_table.component");
 var UserAssociationsModule = (function () {
     function UserAssociationsModule() {
     }
@@ -20,7 +21,8 @@ var UserAssociationsModule = (function () {
                 app_routing_1.AppRouting
             ],
             declarations: [
-                associations_component_1.UsersAssociationsComponent
+                associations_component_1.UsersAssociationsComponent,
+                grid_table_component_1.GridTableComponent
             ]
         }), 
         __metadata('design:paramtypes', [])

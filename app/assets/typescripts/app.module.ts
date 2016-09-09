@@ -10,14 +10,15 @@ import { UsersModule } from "./app/users/_users.wrapper.module";
 import { AuthenticationModule } from "./app/authentication/_authentication.wrapper.module";
 
 @NgModule({
-    imports:      [
+    imports:[
         AppRouting,
         BrowserModule,
         UsersModule,
-        AuthenticationModule
+        AuthenticationModule,
     ],
     declarations: [
         AppComponent,
+
         /*Navigation components*/
         NavigationComponent
     ],

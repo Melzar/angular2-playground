@@ -9,14 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var user_associations_grid_table_config_1 = require("../commons/user.associations.grid-table.config");
 var UsersAssociationsComponent = (function () {
-    function UsersAssociationsComponent() {
+    function UsersAssociationsComponent(tableConfig) {
+        this.tableConfig = tableConfig;
     }
     UsersAssociationsComponent = __decorate([
         core_1.Component({
-            templateUrl: 'app/users/associations/index.html'
+            templateUrl: 'app/users/associations/index.html',
+            providers: [
+                user_associations_grid_table_config_1.UserAssociationsGridTableConfig
+            ]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [user_associations_grid_table_config_1.UserAssociationsGridTableConfig])
     ], UsersAssociationsComponent);
     return UsersAssociationsComponent;
 }());
