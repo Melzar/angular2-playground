@@ -1,6 +1,6 @@
-import { Directive, Component, NgModule, Input, ViewContainerRef, Compiler } from '@angular/core'
+import { Directive, Component, NgModule, Input, ViewContainerRef, Compiler, ElementRef } from '@angular/core'
 import { CommonModule } from '@angular/common'
-import {HelpersModule} from "./_helpers.wrapper.module";
+import { HelpersModule } from "./_helpers.wrapper.module";
 
 @Directive({
     selector: 'html-outlet'
@@ -16,31 +16,46 @@ export class HtmlOutlet {
         const html = this.html;
         const context = this.context;
         const metaData = this.metaData;
-        console.log(this.html)
+
         if (!html) return;
 
         @Component({
-            selector: 'dynamic-comp',
-            templateUrl: html
+                selector: 'dynamic-comp',
+                templateUrl: html
         })
         class DynamicHtmlComponent  {
-            context = context;
-            metaData = metaData;
-        };
+                context = context;
+                metaData = metaData;
+
+                constructor(private el: ElementRef) {
+                }
+
+                //wait for the component to render completely
+                ngOnInit() {
+                    var nativeElement: HTMLElement = this.el.nativeElement,
+                        parentElement: HTMLElement = nativeElement.parentElement;
+                    // move all children out of the element
+                    while (nativeElement.firstChild) {
+                        parentElement.insertBefore(nativeElement.firstChild, nativeElement);
+                    }
+                    // remove the empty element(the host)
+                    parentElement.removeChild(nativeElement);
+                }
+            };
 
         @NgModule({
-            imports: [
-                CommonModule,
-                HelpersModule
-            ],
-            declarations: [DynamicHtmlComponent]
-        })
+                imports: [
+                    CommonModule,
+                    HelpersModule
+                ],
+                declarations: [DynamicHtmlComponent]
+            })
         class DynamicHtmlModule {}
 
         this.compiler.compileModuleAndAllComponentsAsync(DynamicHtmlModule)
             .then(factory => {
                 const compFactory = factory.componentFactories
-                    .find(x => x.componentType === DynamicHtmlComponent);
+                    .find(x => x.componentType === (DynamicHtmlComponent));
                 const cmpRef = this.vcRef.createComponent(compFactory, 0);
             });
     }

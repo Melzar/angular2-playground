@@ -1,9 +1,8 @@
 <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
     <thead>
             <html-outlet [html]="applyTableHeaderTemplate()" [context]="this"></html-outlet>
-        <!--<template [ngTemplateOutlet]="" [ngOutletContext]="objectExpression"></template>-->
     </thead>
     <tbody>
-        <!--<template [ngTemplateOutlet]="applyTableBodyTemplate()" [ngOutletContext]="objectExpression"></template>-->
+            <html-outlet [html]="applyTableBodyTemplate()" [context]="this"></html-outlet>
     </tbody>
 </table>

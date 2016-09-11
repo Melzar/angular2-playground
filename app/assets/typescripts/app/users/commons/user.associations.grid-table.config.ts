@@ -1,4 +1,4 @@
-import { BaseTableConfig } from "../../../components/grid_table/models/grid_table.config.model";
+import { BaseTableConfig } from "../../../components/grid_table/models/config/grid_table.config.model";
 
 export class UserAssociationsGridTableConfig extends BaseTableConfig {
 

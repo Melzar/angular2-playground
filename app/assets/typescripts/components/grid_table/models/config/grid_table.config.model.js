@@ -8,7 +8,7 @@ var BaseTableConfig = (function () {
         this._tableFieldCellTemplate = {};
         this._fieldsLabels = {};
         this._fields = [];
-        this._tableFieldCellTemplateDefault = 'components/grid_table/grid_body_cell/default_field_cell.html';
+        this._tableFieldCellTemplateDefault = 'components/grid_table/grid_body_cell/base_field_cell.html';
         this._tableFieldHeaderCellTemplateDefault = 'components/grid_table/grid_header_cell/default_field_header_cell.html';
     }
     Object.defineProperty(BaseTableConfig.prototype, "tableId", {

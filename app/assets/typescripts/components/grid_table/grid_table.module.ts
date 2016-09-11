@@ -5,7 +5,7 @@ import { HelpersModule } from "../../helpers/_helpers.wrapper.module";
 
 @NgModule({
     imports:[
-        HelpersModule
+      HelpersModule
     ],
     declarations: [
       GridTableComponent

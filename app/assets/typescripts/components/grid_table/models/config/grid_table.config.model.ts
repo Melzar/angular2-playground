@@ -7,7 +7,7 @@ export class BaseTableConfig {
     private _fieldsLabels: Object = {};
     private _fields: Array<string> = [];
 
-    private _tableFieldCellTemplateDefault: string = 'components/grid_table/grid_body_cell/default_field_cell.html';
+    private _tableFieldCellTemplateDefault: string = 'components/grid_table/grid_body_cell/base_field_cell.html';
     private _tableFieldHeaderCellTemplateDefault: string = 'components/grid_table/grid_header_cell/default_field_header_cell.html';
 
     constructor(){

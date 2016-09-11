@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var grid_table_config_model_1 = require("./models/grid_table.config.model");
+var grid_table_config_model_1 = require("./models/config/grid_table.config.model");
 var GridTableComponent = (function () {
     /* Constructor */
     function GridTableComponent() {
@@ -29,7 +29,7 @@ var GridTableComponent = (function () {
     };
     GridTableComponent.prototype.applyFieldCellTemplate = function (field) {
         return this.tableConfig.tableFieldCellTemplate[field] ?
-            this.tableConfig.tableFieldCellTemplate[field] : this.tableConfig.tableFieldHeaderCellTemplateDefault;
+            this.tableConfig.tableFieldCellTemplate[field] : this.tableConfig.tableFieldCellTemplateDefault;
     };
     GridTableComponent.prototype.applyFieldHeaderLabel = function (field) {
         return this.tableConfig.fieldsLabels[field];

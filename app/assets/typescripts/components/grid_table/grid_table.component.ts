@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core'
 
-import { BaseTableConfig } from "./models/grid_table.config.model";
+import { BaseTableConfig } from "./models/config/grid_table.config.model";
 
 @Component({
     selector: 'grid-table',
@@ -40,7 +40,7 @@ export class GridTableComponent implements OnInit{
 
     applyFieldCellTemplate(field: string): string{
         return this.tableConfig.tableFieldCellTemplate[field] ?
-            this.tableConfig.tableFieldCellTemplate[field] : this.tableConfig.tableFieldHeaderCellTemplateDefault;
+            this.tableConfig.tableFieldCellTemplate[field] : this.tableConfig.tableFieldCellTemplateDefault;
     }
 
     applyFieldHeaderLabel( field: string): string{

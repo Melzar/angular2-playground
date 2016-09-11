@@ -1,5 +1,8 @@
-<tr>
-    <td *ngFor="let field in tableConfig.fields">
-        <template [ngTemplateOutlet]="applyFieldCellTemplate(field)" [ngOutletContext]="objectExpression"></template>
+<tr *ngFor="let row of context.tableData">
+    <td *ngFor="let field of context.tableConfig.fields">
+        <html-outlet [html]="context.applyFieldCellTemplate(field)"
+                     [context]="context"
+                     [metaData]="{field: field, row: row}"
+        ></html-outlet>
     </td>
 </tr>
