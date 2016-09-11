@@ -1,6 +1,3 @@
-/*
-TODO: Extend this component when there will be stable dynamic component/template feature available
- */
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -20,17 +17,19 @@ var GridTableComponent = (function () {
     /* Public Methods */
     GridTableComponent.prototype.ngOnInit = function () {
     };
-    GridTableComponent.prototype.applyTableHeaderTemplate = function (field) {
-        return this.tableConfig.tableHeaderTemplate[field];
+    GridTableComponent.prototype.applyTableHeaderTemplate = function () {
+        return this.tableConfig.tableHeaderTemplate;
     };
-    GridTableComponent.prototype.applyTableBodyTemplate = function (field) {
-        return this.tableConfig.tableBodyTemplate[field];
+    GridTableComponent.prototype.applyTableBodyTemplate = function () {
+        return this.tableConfig.tableBodyTemplate;
     };
     GridTableComponent.prototype.applyFieldHeaderCellTemplate = function (field) {
-        return this.tableConfig.tableFieldHeaderCellTemplate[field];
+        return this.tableConfig.tableFieldHeaderCellTemplate[field] ?
+            this.tableConfig.tableFieldHeaderCellTemplate[field] : this.tableConfig.tableFieldHeaderCellTemplateDefault;
     };
     GridTableComponent.prototype.applyFieldCellTemplate = function (field) {
-        return this.tableConfig.tableFieldCellTemplate[field];
+        return this.tableConfig.tableFieldCellTemplate[field] ?
+            this.tableConfig.tableFieldCellTemplate[field] : this.tableConfig.tableFieldHeaderCellTemplateDefault;
     };
     GridTableComponent.prototype.applyFieldHeaderLabel = function (field) {
         return this.tableConfig.fieldsLabels[field];

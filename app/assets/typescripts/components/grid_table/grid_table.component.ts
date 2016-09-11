@@ -1,7 +1,3 @@
-/*
-TODO: Extend this component when there will be stable dynamic component/template feature available
- */
-
 import { Component, OnInit, Input } from '@angular/core'
 
 import { BaseTableConfig } from "./models/grid_table.config.model";
@@ -26,22 +22,25 @@ export class GridTableComponent implements OnInit{
 
     /* Public Methods */
     ngOnInit(){
+
     }
 
-    applyTableHeaderTemplate(field: string): string {
-        return this.tableConfig.tableHeaderTemplate[field];
+    applyTableHeaderTemplate(): string {
+        return this.tableConfig.tableHeaderTemplate;
     }
 
-    applyTableBodyTemplate(field: string): string {
-        return this.tableConfig.tableBodyTemplate[field];
+    applyTableBodyTemplate(): string {
+        return this.tableConfig.tableBodyTemplate;
     }
 
     applyFieldHeaderCellTemplate(field: string): string{
-        return this.tableConfig.tableFieldHeaderCellTemplate[field];
+        return this.tableConfig.tableFieldHeaderCellTemplate[field] ?
+            this.tableConfig.tableFieldHeaderCellTemplate[field] : this.tableConfig.tableFieldHeaderCellTemplateDefault;
     }
 
     applyFieldCellTemplate(field: string): string{
-        return this.tableConfig.tableFieldCellTemplate[field];
+        return this.tableConfig.tableFieldCellTemplate[field] ?
+            this.tableConfig.tableFieldCellTemplate[field] : this.tableConfig.tableFieldHeaderCellTemplateDefault;
     }
 
     applyFieldHeaderLabel( field: string): string{
@@ -49,11 +48,5 @@ export class GridTableComponent implements OnInit{
     }
 
     /* Private Methods */
-
-
-
-
-
-
 
 }

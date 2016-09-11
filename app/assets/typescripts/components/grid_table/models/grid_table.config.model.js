@@ -4,10 +4,12 @@ var BaseTableConfig = (function () {
         this._tableId = 'grid_table';
         this._tableHeaderTemplate = 'components/grid_table/grid_header/default_table_header.html';
         this._tableBodyTemplate = 'components/grid_table/grid_body/default_table_body.html';
-        this._tableFieldHeaderCellTemplate = 'components/grid_table/grid_header_cell/default_field_header_cell.html';
-        this._tableFieldCellTemplate = 'components/grid_table/grid_body_cell/default_field_cell.html';
+        this._tableFieldHeaderCellTemplate = {};
+        this._tableFieldCellTemplate = {};
         this._fieldsLabels = {};
         this._fields = [];
+        this._tableFieldCellTemplateDefault = 'components/grid_table/grid_body_cell/default_field_cell.html';
+        this._tableFieldHeaderCellTemplateDefault = 'components/grid_table/grid_header_cell/default_field_header_cell.html';
     }
     Object.defineProperty(BaseTableConfig.prototype, "tableId", {
         get: function () {
@@ -59,6 +61,16 @@ var BaseTableConfig = (function () {
         enumerable: true,
         configurable: true
     });
+    Object.defineProperty(BaseTableConfig.prototype, "tableFieldCellTemplate", {
+        get: function () {
+            return this._tableFieldCellTemplate;
+        },
+        set: function (value) {
+            this._tableFieldCellTemplate = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
     Object.defineProperty(BaseTableConfig.prototype, "tableFieldHeaderCellTemplate", {
         get: function () {
             return this._tableFieldHeaderCellTemplate;
@@ -69,12 +81,16 @@ var BaseTableConfig = (function () {
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(BaseTableConfig.prototype, "tableFieldCellTemplate", {
+    Object.defineProperty(BaseTableConfig.prototype, "tableFieldCellTemplateDefault", {
         get: function () {
-            return this._tableFieldCellTemplate;
+            return this._tableFieldCellTemplateDefault;
         },
-        set: function (value) {
-            this._tableFieldCellTemplate = value;
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(BaseTableConfig.prototype, "tableFieldHeaderCellTemplateDefault", {
+        get: function () {
+            return this._tableFieldHeaderCellTemplateDefault;
         },
         enumerable: true,
         configurable: true

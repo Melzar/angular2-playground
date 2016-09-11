@@ -9,20 +9,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var grid_table_module_1 = require("../../../components/grid_table/grid_table.module");
 var associations_component_1 = require("./associations.component");
 var app_routing_1 = require("../../../app.routing");
-var grid_table_component_1 = require("../../../components/grid_table/grid_table.component");
 var UserAssociationsModule = (function () {
     function UserAssociationsModule() {
     }
     UserAssociationsModule = __decorate([
         core_1.NgModule({
             imports: [
-                app_routing_1.AppRouting
+                app_routing_1.AppRouting,
+                grid_table_module_1.GridTableModule
             ],
             declarations: [
-                associations_component_1.UsersAssociationsComponent,
-                grid_table_component_1.GridTableComponent
+                associations_component_1.UsersAssociationsComponent
             ]
         }), 
         __metadata('design:paramtypes', [])

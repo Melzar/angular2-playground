@@ -2,10 +2,13 @@ export class BaseTableConfig {
     private _tableId: string = 'grid_table';
     private _tableHeaderTemplate: string = 'components/grid_table/grid_header/default_table_header.html';
     private _tableBodyTemplate: string = 'components/grid_table/grid_body/default_table_body.html';
-    private _tableFieldHeaderCellTemplate: string = 'components/grid_table/grid_header_cell/default_field_header_cell.html';
-    private _tableFieldCellTemplate: string = 'components/grid_table/grid_body_cell/default_field_cell.html';
+    private _tableFieldHeaderCellTemplate: Object = {};
+    private _tableFieldCellTemplate: Object = {};
     private _fieldsLabels: Object = {};
     private _fields: Array<string> = [];
+
+    private _tableFieldCellTemplateDefault: string = 'components/grid_table/grid_body_cell/default_field_cell.html';
+    private _tableFieldHeaderCellTemplateDefault: string = 'components/grid_table/grid_header_cell/default_field_header_cell.html';
 
     constructor(){
     }
@@ -30,12 +33,28 @@ export class BaseTableConfig {
         return this._tableBodyTemplate;
     }
 
-    get tableFieldHeaderCellTemplate():string {
+    get tableFieldCellTemplate():Object {
+        return this._tableFieldCellTemplate;
+    }
+
+    get tableFieldHeaderCellTemplate():Object {
         return this._tableFieldHeaderCellTemplate;
     }
 
-    get tableFieldCellTemplate():string {
-        return this._tableFieldCellTemplate;
+    get tableFieldCellTemplateDefault():string {
+        return this._tableFieldCellTemplateDefault;
+    }
+
+    get tableFieldHeaderCellTemplateDefault():string {
+        return this._tableFieldHeaderCellTemplateDefault;
+    }
+
+    set tableFieldHeaderCellTemplate(value:Object) {
+        this._tableFieldHeaderCellTemplate = value;
+    }
+
+    set tableFieldCellTemplate(value:Object) {
+        this._tableFieldCellTemplate = value;
     }
 
     set tableId(value:string) {
@@ -50,14 +69,6 @@ export class BaseTableConfig {
         this._tableBodyTemplate = value;
     }
 
-    set tableFieldHeaderCellTemplate(value:string) {
-        this._tableFieldHeaderCellTemplate = value;
-    }
-
-    set tableFieldCellTemplate(value:string) {
-        this._tableFieldCellTemplate = value;
-    }
-
     set fieldsLabels(value:Object) {
         this._fieldsLabels = value;
     }
@@ -65,4 +76,6 @@ export class BaseTableConfig {
     set fields(value:Array<string>) {
         this._fields = value;
     }
+
+
 }
