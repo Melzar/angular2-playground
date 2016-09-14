@@ -1,7 +1,7 @@
 import { Directive, Component, NgModule, Input, ViewContainerRef, Compiler, ElementRef } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { HelpersModule } from "./_helpers.wrapper.module";
-import {BaseFieldCellComponent} from "../components/grid_table/grid_table_cells/grid_table_body_cells/base_field_cell.component";
+import { BaseFieldCellComponent } from "../components/grid_table/grid_table_cells/grid_table_body_cells/base_field_cell.component";
 
 @Directive({
     selector: 'component-outlet'
