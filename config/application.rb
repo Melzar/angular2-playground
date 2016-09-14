@@ -21,6 +21,5 @@ module Angular2Learning
       end
     end
 
-
   end
 end
